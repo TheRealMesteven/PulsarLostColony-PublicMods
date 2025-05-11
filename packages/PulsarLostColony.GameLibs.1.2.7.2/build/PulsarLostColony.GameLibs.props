@@ -1,0 +1,9 @@
+<Project>
+  <!--Disable auto copy on build. Stolen from BepInEx.Core-->
+  <Target Name="SkipCopyPLCRefs" AfterTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.NuGetPackageId)' == 'PulsarLostColony.GameLibs'" />
+    </ItemGroup>
+  </Target>
+
+</Project>
