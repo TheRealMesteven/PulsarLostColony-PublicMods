@@ -39,43 +39,43 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\packages\0Harmony.dll</HintPath>
+      <HintPath>..\..\packages\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Accessibility, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\Accessibility.dll</HintPath>
+      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\Accessibility.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ACTk.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\ACTk.Runtime.dll</HintPath>
+      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\ACTk.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PulsarModLoader">
-      <HintPath>..\packages\PulsarModLoader.dll</HintPath>
+      <HintPath>..\..\packages\PulsarModLoader.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.dll</HintPath>
+      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.InputLegacyModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -87,6 +87,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\PulsarLostColony.GameLibs.1.2.7.2\build\PulsarLostColony.GameLibs.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PulsarLostColony.GameLibs.1.2.7.2\build\PulsarLostColony.GameLibs.props'))" />
+    <Error Condition="!Exists('..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\build\PulsarLostColony.GameLibs.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PulsarLostColony.GameLibs.1.2.7.2\build\PulsarLostColony.GameLibs.props'))" />
   </Target>
 </Project>
