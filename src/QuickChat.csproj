@@ -45,9 +45,6 @@
       <HintPath>..\..\packages\PulsarModLoader.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="PulsarModLoader">
-      <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\PulsarModLoader.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\System.dll</HintPath>
       <Private>False</Private>

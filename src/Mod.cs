@@ -12,14 +12,14 @@ namespace QuickChat
 		public override string HarmonyIdentifier() => "Badryuiner.QuickChatTweaked";
 		public override string Author => "Badryuiner, Mest";
 		public override string Name => "Quick Chat";
-		public override string Version => "2.1";
+		public override string Version => "0.2.2";
 		public Mod()
 		{
 			Mod.InitCfg();
 		}
 		public static void InitCfg()
 		{
-			string path = PulsarModLoader.ModManager.GetModsDir() + "\\QuickChat.json";
+			string path = Directory.GetCurrentDirectory() + "\\QuickChat.json";
 			if (!File.Exists(path))
 			{
                 Mod.binds = new Bind[]
