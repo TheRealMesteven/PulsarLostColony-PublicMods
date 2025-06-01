@@ -1,4 +1,4 @@
-# Quick Chat
+# Cards
 ```
 Mod Name: Cards
 Mod Author: Mest
