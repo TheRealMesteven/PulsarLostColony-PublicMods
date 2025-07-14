@@ -87,7 +87,7 @@ namespace OpenTrack_Tracker
                 }
 
                 // Sleep for 10 milliseconds to reduce the frequency of UDP calls
-                Thread.Sleep(10);
+                //Thread.Sleep(10);
             }
         }
 
@@ -103,13 +103,11 @@ namespace OpenTrack_Tracker
 
         void Update()
         {
-            // Apply the position and rotation to the targetObject
-            /*if (targetObject != null)
-            {
-                targetObject.transform.localPosition = Position;
-                targetObject.transform.localEulerAngles = Rotation;
-            }*/
-            Debug.Log($"[OpenTrack] Position:({Position.x}, {Position.y}, {Position.z}) Rotation:({Rotation.x}, {Rotation.y}, {Rotation.z})");
+            //Debug.Log($"[OpenTrack] Position:({Position.x}, {Position.y}, {Position.z}) Rotation:({Rotation.x}, {Rotation.y}, {Rotation.z})");
+            var camera = PLCameraSystem.Instance.CurrentSubSystem.LocalPawnCameras[0];
+            if (camera == null) return;
+            camera.transform.localPosition = Position;
+            camera.transform.localEulerAngles = Rotation;
         }
     }
 
