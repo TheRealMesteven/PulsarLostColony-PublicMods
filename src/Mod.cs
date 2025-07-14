@@ -1,6 +1,7 @@
 using PulsarModLoader;
+using UnityEngine;
 
-namespace OpenTrack-Tracker
+namespace OpenTrack_Tracker
 {
     public class Mod : PulsarMod
     {
@@ -13,5 +14,11 @@ namespace OpenTrack-Tracker
         public override string Name => "OpenTrack-Tracker";
 
         public override string HarmonyIdentifier() => "Mest.OpenTrack-Tracker";
+        public Mod()
+        {
+            GameObject go = new UnityEngine.GameObject("OpenTrack_Tracker");
+            go.AddComponent<UDPReceiver>();
+            GameObject.DontDestroyOnLoad(go);
+        }
     }
 }

@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\PulsarLostColony.GameLibs.1.2.7.2\build\PulsarLostColony.GameLibs.props" Condition="Exists('..\packages\PulsarLostColony.GameLibs.1.2.7.2\build\PulsarLostColony.GameLibs.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2b8570f9-7762-4b91-935d-7a2244ef4290}</ProjectGuid>
+    <ProjectGuid>{2B8570F9-7762-4B91-935D-7A2244EF4290}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenTrack-Tracker</RootNamespace>
-    <AssemblyName>OpenTrack-Tracker</AssemblyName>
+    <RootNamespace>OpenTrack_Tracker</RootNamespace>
+    <AssemblyName>OpenTrack_Tracker</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tracker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
@@ -58,6 +59,10 @@
       <HintPath>..\..\packages\PulsarModLoader.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Sockets" />
+    <Reference Include="System.Threading" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PulsarLostColony.GameLibs.1.2.7.2\lib\UnityEngine.dll</HintPath>
       <Private>False</Private>
