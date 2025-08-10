@@ -1,8 +1,11 @@
 ﻿using HarmonyLib;
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -30,7 +33,7 @@ namespace music_mod
             DontDestroyOnLoad(gameObject);
 
             audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.loop = true;
+            audioSource.loop = false;
 
             if (!Directory.Exists(musicFolder))
             {
@@ -41,15 +44,15 @@ namespace music_mod
 
             StartCoroutine(LoadAllMusic());
         }
-        internal bool searchingformusic = false;
+        internal bool searchingForMusic = false;
         internal void ReloadMusic()
         {
-            if (searchingformusic) return;
+            if (searchingForMusic) return;
             StartCoroutine(LoadAllMusic());
         }
         internal IEnumerator LoadAllMusic()
         {
-            searchingformusic = true;
+            searchingForMusic = true;
             musicCache.Clear();
             foreach (var file in Directory.GetFiles(musicFolder))
             {
@@ -76,7 +79,7 @@ namespace music_mod
                     }
                 }
             }
-            searchingformusic = false;
+            searchingForMusic = false;
         }
 
         private static AudioType GetAudioType(string filePath)
@@ -91,8 +94,20 @@ namespace music_mod
             }
         }
 
+        public void PlayRandomMusic()
+        {
+            int randomIndex = UnityEngine.Random.Range(0, MusicPlayer.Instance.musicCache.Count);
+            var music = MusicPlayer.Instance.musicCache.ElementAt(randomIndex);
+
+            PLMusic.Instance.CurrentPlayingMusicEventString = "[MODDED]"+ music.Key;
+            audioSource.clip = music.Value;
+            audioSource.Play();
+            Debug.Log($"[CustomMusic] Random Track Selected - Playing '{music.Key}'");
+        }
+
         public void PlayMusic(string clipName)
         {
+            PLMusic.Instance.CurrentPlayingMusicEventString = "[MODDED]" + clipName;
             if (musicCache.TryGetValue(clipName, out AudioClip clip))
             {
                 audioSource.clip = clip;
@@ -129,6 +144,27 @@ namespace music_mod
         public void StopMusic()
         {
             audioSource.Stop();
+        }
+
+        void Update()
+        {
+            if (audioSource != null)
+            {
+                audioSource.volume = Config.Volume.Value;
+                if (!audioSource.isPlaying && audioSource.clip != null)
+                {
+                    OnMusicEnded();
+                }
+            }
+        }
+
+        void OnMusicEnded()
+        {
+            if (Patches.loopingMusic)
+            {
+                Debug.Log("[CustomMusic] Music finished - finding next track");
+                PlayRandomMusic();
+            }
         }
     }
 }

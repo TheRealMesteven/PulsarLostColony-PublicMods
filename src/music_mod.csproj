@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Mod.cs" />
     <Compile Include="MusicPlayer.cs" />
+    <Compile Include="Patches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

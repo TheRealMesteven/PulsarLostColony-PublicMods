@@ -27,6 +27,12 @@ namespace music_mod
         public override string Name() => "music mod config";
         public override void Draw()
         {
+            OverrideDefaultMusic.Value = GUILayout.Toggle(OverrideDefaultMusic.Value, "Override ingame music");
+            GUILayout.BeginHorizontal();
+            GUILayout.Label($"Volume: {Volume.Value*100}%", GUILayout.MaxWidth(100));
+            GUILayout.Space(10);
+            Volume.Value = GUILayout.HorizontalSlider(Volume.Value, 0f, 1f);
+            GUILayout.EndHorizontal();
             if (MusicPlayer.Instance == null)
             {
                 GUILayout.Label("Music player class is null!");
@@ -46,7 +52,7 @@ namespace music_mod
             {
                 MusicPlayer.Instance.StopMusic();
             }
-            if (!MusicPlayer.Instance.searchingformusic)
+            if (!MusicPlayer.Instance.searchingForMusic)
             {
                 if (GUILayout.Button("Reload"))
                 {
@@ -67,6 +73,7 @@ namespace music_mod
                 GUILayout.EndHorizontal();
             }
         }
-
+        internal static SaveValue<bool> OverrideDefaultMusic = new SaveValue<bool>("OverrideDefaultMusic", true);
+        internal static SaveValue<float> Volume = new SaveValue<float>("Volume", 0.5f);
     }
 }
